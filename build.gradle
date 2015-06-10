@@ -34,8 +34,9 @@ dependencies {
     compile "org.slf4j:slf4j-simple:1.6.4"
 
     quasar  "co.paralleluniverse:quasar-core:0.7.0"
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-task run {
+test {
     jvmArgs "-javaagent:${configurations.quasar.iterator().next()}"
 }
